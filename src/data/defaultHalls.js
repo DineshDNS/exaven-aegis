@@ -1,0 +1,51 @@
+// src/data/defaultHalls.js
+
+export const defaultHalls = [
+  {
+    id: "hall-101",
+    hallName: "Hall 101",
+    roomNumber: "101",
+    building: "Main Block",
+    floor: "Ground Floor",
+    hallType: "General Hall",
+    rows: 10,
+    columns: 6,
+    seatingType: "Bench",
+    seatsPerUnit: 2,
+    capacity: 10 * 6 * 2,
+    features: "General examination hall",
+    isDefault: true,
+  },
+
+  {
+    id: "hall-102",
+    hallName: "Hall 102",
+    roomNumber: "102",
+    building: "Main Block",
+    floor: "First Floor",
+    hallType: "General Hall",
+    rows: 8,
+    columns: 5,
+    seatingType: "Desk",
+    seatsPerUnit: 1,
+    capacity: 8 * 5 * 1,
+    features: "Individual desk seating",
+    isDefault: true,
+  },
+
+  {
+    id: "hall-103",
+    hallName: "Hall 103",
+    roomNumber: "103",
+    building: "Science Block",
+    floor: "Ground Floor",
+    hallType: "Laboratory",
+    rows: 6,
+    columns: 5,
+    seatingType: "Chair",
+    seatsPerUnit: 1,
+    capacity: 6 * 5 * 1,
+    features: "Laboratory seating",
+    isDefault: true,
+  },
+];
