@@ -11,7 +11,7 @@ export const defaultHalls = [
     rows: 10,
     columns: 6,
     seatingType: "Bench",
-    seatsPerUnit: 2,
+    seatsPerUnit: 1,
     capacity: 10 * 6 * 2,
     features: "General examination hall",
     isDefault: true,

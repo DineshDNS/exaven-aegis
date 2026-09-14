@@ -36,10 +36,6 @@ function getClassCourse(classItem) {
 
 /* -------------------------------------------------------------------------- */
 /* Create allocation students                                                 */
-/*                                                                            */
-/* Register numbers are taken only from assignedRegisters.                    */
-/* Student names are not available, so they remain empty.                     */
-/* StudentAllocation.jsx will display "-" for empty student names.            */
 /* -------------------------------------------------------------------------- */
 
 function createAllocationStudents(classes = []) {
@@ -78,14 +74,9 @@ function createAllocationStudents(classes = []) {
         return {
           id: `${classItem.id || classIndex}-${exactRegisterNumber}`,
 
-          /* Exact register number */
           registerNumber: exactRegisterNumber,
           register_number: exactRegisterNumber,
 
-          /*
-           * Student name is not available in the current class data.
-           * Do not use register number as student name.
-           */
           studentName: "",
           student_name: "",
           name: "",
@@ -140,7 +131,7 @@ export default function App() {
     : [];
 
   /* ------------------------------------------------------------------------ */
-  /* Create student list                                                      */
+  /* Create allocation students                                               */
   /* ------------------------------------------------------------------------ */
 
   const allocationStudents = useMemo(() => {
@@ -247,7 +238,7 @@ export default function App() {
   }
 
   /* ------------------------------------------------------------------------ */
-  /* Validation                                                                */
+  /* Validation                                                               */
   /* ------------------------------------------------------------------------ */
 
   function validateCurrentStep() {
@@ -301,7 +292,7 @@ export default function App() {
   }
 
   /* ------------------------------------------------------------------------ */
-  /* Navigation                                                                */
+  /* Navigation                                                               */
   /* ------------------------------------------------------------------------ */
 
   function handleNext() {
@@ -336,7 +327,7 @@ export default function App() {
   }
 
   /* ------------------------------------------------------------------------ */
-  /* Render current step                                                       */
+  /* Render current step                                                      */
   /* ------------------------------------------------------------------------ */
 
   function renderCurrentStep() {
@@ -363,6 +354,7 @@ export default function App() {
         return (
           <HallManagement
             halls={safeHalls}
+            classes={safeClasses}
             onChange={handleHallsChange}
           />
         );
@@ -402,7 +394,7 @@ export default function App() {
   }
 
   /* ------------------------------------------------------------------------ */
-  /* App layout                                                                */
+  /* App layout                                                               */
   /* ------------------------------------------------------------------------ */
 
   return (
